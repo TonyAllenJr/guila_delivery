@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/listaProdutos"
+        android:title="@string/inicio"
+        android:icon="@drawable/ic_acao_inicio"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/cadastroUsuario"
+        android:title="@string/perfil"
+        android:icon="@drawable/ic_acao_perfil"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/listaPedidos"
+        android:title="@string/pedidos"
+        android:icon="@drawable/ic_acao_pedidos"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/faleConosco"
+        android:title="@string/mensagens"
+        android:icon="@drawable/ic_acao_fale_conosco"
+        app:showAsAction="ifRoom"/>
+
+</menu>

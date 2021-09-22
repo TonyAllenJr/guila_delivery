@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/redefine_senha_email"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:backgroundTint="@android:color/white"
+            android:hint="@string/digite_seu_email"
+            android:inputType="textEmailAddress"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/redefine_senha_botao"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:text="@string/enviar"
+        android:background="@drawable/formato_botao_acao"
+        app:layout_constraintEnd_toEndOf="@id/redefine_senha_email"
+        app:layout_constraintStart_toStartOf="@id/redefine_senha_email"
+        app:layout_constraintTop_toBottomOf="@id/redefine_senha_email" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    

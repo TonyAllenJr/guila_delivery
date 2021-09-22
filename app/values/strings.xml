@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Frutasecia</string>
+    <string name="imagem_do_produto">Imagem do produto</string>
+    <string name="cadastro_de_produto">Cadastro de produto</string>
+    <string name="nome">Nome</string>
+    <string name="preco">Preço</string>
+    <string name="url">Endereço URL</string>
+    <string name="remover">Remover</string>
+    <string name="botao_adicionar_produto">Botão adicionar produto</string>
+    <string name="sair">Sair</string>
+    <string name="salvar">Salvar</string>
+    <string name="Email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="logar">Logar</string>
+    <string name="cadastrar_usuario">Cadastrar usuário</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

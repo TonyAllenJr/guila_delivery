@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "259392205243",
+    "project_id": "distribuidora-do-guila",
+    "storage_bucket": "distribuidora-do-guila.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259392205243:android:466b2c881b409bc07fd49e",
+        "android_client_info": {
+          "package_name": "br.com.antonio.distribuidoradoguila"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259392205243-ljcpgptvocldl14ocoahbqie8o48rmt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0q0JD7n5UNp30PlDG_rC_sk49WNfJZTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259392205243-ljcpgptvocldl14ocoahbqie8o48rmt0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_dinheiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_dinheiro_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="#ff7b5a"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="150.000,00" />
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_cartao_credito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_dinheiro"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_cartao_credito_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="#ff7b5a"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_dinheiro"
+        tools:text="150.000,00" />
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_cartao_debito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_credito"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_cartao_debito_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="#ff7b5a"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_credito"
+        tools:text="150.000,00" />
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_pix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_debito"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/vendas_por_tipo_cartao_pix_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="#ff7b5a"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_debito"
+        tools:text="150.000,00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/relatorio_vendas_titulo_ordem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Ordenar por"
+            />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/relatorio_vendas_botao_grupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toBottomOf="@id/relatorio_vendas_titulo_ordem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/relatorio_vendas_botao_nome"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:strokeWidth="1dp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/relatorio_vendas_botao_quantidade"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantidade"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/relatorio_vendas_botao_valor"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/relatorio_vendas_botao_tipo_pagamento"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:strokeWidth="1dp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/relatorio_vendas_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relatorio_vendas_botao_grupo"
+            tools:listitem="@layout/item_relatorio_vendas">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_dinheiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relatorio_vendas_recyclerview"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_dinheiro_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="#ff7b5a"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relatorio_vendas_recyclerview"
+            tools:text="150.000,00" />
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_cartao_credito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_dinheiro"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_cartao_credito_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="#ff7b5a"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_dinheiro"
+            tools:text="150.000,00" />
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_cartao_debito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_credito"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_cartao_debito_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="#ff7b5a"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_credito"
+            tools:text="150.000,00" />
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_pix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_debito"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/vendas_por_tipo_pix_valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="#ff7b5a"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vendas_por_tipo_cartao_debito"
+            tools:text="150.000,00" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+

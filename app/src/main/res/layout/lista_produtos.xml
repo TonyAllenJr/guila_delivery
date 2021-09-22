@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lista_produtos_aberto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/aberto"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:background="#008000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lista_produtos_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/lista_produtos_fechado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:text="@string/fechado"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:background="#ff0000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lista_produtos_horizontal"
+        />
+
+    <HorizontalScrollView
+        android:id="@+id/lista_produtos_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/lista_produtos_linha"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/lista_produtos_botao_grupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            android:layout_marginStart="-8dp"
+            app:layout_constraintTop_toBottomOf="@id/lista_produtos_aberto"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lista_produtos_botao_cervejas"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/botao_inicial_cerveja"
+                app:cornerRadius="5dp"
+                android:textAllCaps="false"
+                app:strokeWidth="0dp"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lista_produtos_botao_destilado"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="5dp"
+                android:text="@string/botao_inicial_destilado"
+                android:textAllCaps="false"
+                app:strokeWidth="0dp"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lista_produtos_botao_sem_alcool"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="5dp"
+                android:text="@string/botao_inicial_sem_alcool"
+                android:textAllCaps="false"
+                app:strokeWidth="0dp"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lista_produtos_botao_petiscos"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="5dp"
+                android:text="@string/botao_inicial_petiscos"
+                android:textAllCaps="false"
+                app:strokeWidth="0dp"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lista_produtos_botao_diversos"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cornerRadius="5dp"
+                android:text="@string/botao_inicial_diversos"
+                android:textAllCaps="false"
+                app:strokeWidth="0dp"
+                android:textAppearance="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:textSize="14sp"
+                />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/lista_produtos_linha"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lista_produtos_horizontal"
+        android:background="@android:color/holo_orange_light"
+        android:contentDescription="@string/linha_divisoria" />
+
+    <Button
+        android:id="@+id/estoque_zero_voltar"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        android:text="voltar para lista de produtos"
+        android:background="@drawable/formato_botao_acao"
+        app:layout_constraintTop_toBottomOf="@id/lista_produtos_linha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_produtos_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/estoque_zero_voltar"
+        app:layout_constraintVertical_bias="1.0"
+        app:spanCount="3"
+        tools:listitem="@layout/item_lista_produtos" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botao_fab_adicionar_produto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_botao_adicionar_produto_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/botao_adicionar_produto" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botao_fab_carrinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_acao_carrinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/botao_carrinho" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

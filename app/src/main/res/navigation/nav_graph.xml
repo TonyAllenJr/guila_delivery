@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login_graph">
+
+    <fragment
+        android:id="@+id/cadastroUsuario"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.CadastroUsuarioFragment"
+        android:label="Meus dados"
+        tools:layout="@layout/cadastro_usuario">
+        <action
+            android:id="@+id/acao_cadastroUsuario_para_listaProdutos"
+            app:destination="@id/listaProdutos"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/acao_cadastroUsuario_para_alteraSenha"
+            app:destination="@id/alteraSenha" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaProdutos"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ListaProdutosFragment"
+        android:label="Guila Delivery"
+        tools:layout="@layout/lista_produtos">
+        <action
+            android:id="@+id/acao_listaProdutos_para_formularioProduto"
+            app:destination="@id/formularioProduto"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_formularioCarrinho"
+            app:destination="@id/itemCarrinho"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_configuracao"
+            app:destination="@id/configuracoes" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_listaPedidos"
+            app:destination="@id/listaPedidos" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_mensagem"
+            app:destination="@id/faleConosco" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_listaMensagens"
+            app:destination="@id/listaMensagens" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_listaCarrinho"
+            app:destination="@id/listaCarrinho" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_relatorioVendas"
+            app:destination="@id/relatorioVendas" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_relatorioEstoque"
+            app:destination="@id/relatorioEstoque" />
+    </fragment>
+    <fragment
+        android:id="@+id/formularioProduto"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.FormularioProdutoFragment"
+        android:label="Formulario do produto"
+        tools:layout="@layout/formulario_produto">
+        <action
+            android:id="@+id/acao_formularioProduto_para_listaProdutos"
+            app:destination="@id/listaProdutos"
+            app:popUpTo="@id/listaProdutos"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="produtoId"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+    </fragment>
+    <action
+        android:id="@+id/acao_global_login"
+        app:destination="@id/login_graph"
+        app:popUpTo="@id/listaProdutos"
+        app:popUpToInclusive="true" />
+    <navigation
+        android:id="@+id/login_graph"
+        android:label="Fluxo login"
+        app:startDestination="@id/login">
+        <fragment
+            android:id="@+id/login"
+            android:name="br.com.antonio.distribuidoradoguila.ui.fragment.LoginFragment"
+            android:label="Login"
+            tools:layout="@layout/login">
+            <action
+                android:id="@+id/acao_login_para_listaProdutos"
+                app:destination="@id/listaProdutos"
+                app:popUpTo="@id/login"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/acao_login_para_cadastroLogin"
+                app:destination="@id/cadastroLogin" />
+            <action
+                android:id="@+id/acao_login_para_redefineSenha"
+                app:destination="@id/redefineSenha" />
+        </fragment>
+        <fragment
+            android:id="@+id/cadastroLogin"
+            android:name="br.com.antonio.distribuidoradoguila.ui.fragment.CadastroLoginFragment"
+            android:label="Login">
+            <action
+                android:id="@+id/acao_cadastroLogin_para_login"
+                app:destination="@id/login" />
+        </fragment>
+        <fragment
+            android:id="@+id/redefineSenha"
+            android:name="br.com.antonio.distribuidoradoguila.ui.fragment.RedefineSenhaFragment"
+            android:label="Redefine senha" >
+            <action
+                android:id="@+id/acao_redefineSenha_para_login"
+                app:destination="@id/login" />
+        </fragment>
+    </navigation>
+    <fragment
+        android:id="@+id/itemCarrinho"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ItemCarrinhoFragment"
+        android:label="Item do Carrinho">
+        <action
+            android:id="@+id/acao_itemCarrinho_para_listaCarrinho"
+            app:destination="@id/listaCarrinho"
+            app:popUpTo="@id/listaProdutos"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="produtoId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaCarrinho"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ListaCarrinhoFragment"
+        android:label="Lista Carrinho">
+        <action
+            android:id="@+id/acao_listaCarrinho_para_detalheCarrinho"
+            app:destination="@id/detalheCarrinho"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/acao_listaCarrinho_para_listaProduto"
+            app:destination="@id/listaProdutos" />
+        <action
+            android:id="@+id/acao_listaCarrinho_para_finalizaPedido"
+            app:destination="@id/finalizaPedido" />
+        <action
+            android:id="@+id/acao_listaCarrinho_para_cadastroUsuario"
+            app:destination="@id/cadastroUsuario"
+            app:popUpTo="@id/listaCarrinho" />
+        <argument
+            android:name="pedidoId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalheCarrinho"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.DetalheCarrinhoFragment"
+        android:label="Detalhe Carrinho" >
+        <argument
+            android:name="carrinhoId"
+            app:argType="string" />
+        <action
+            android:id="@+id/acao_detalheCarrinho_para_listaCarrinho"
+            app:destination="@id/listaCarrinho"
+            app:popUpTo="@id/listaCarrinho"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="pedidoId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalizaPedido"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.FinalizaPedidoFragment"
+        android:label="Finaliza Pedido" >
+        <action
+            android:id="@+id/acao_finalizaPedido_para_cadastroUsuario"
+            app:destination="@id/cadastroUsuario"
+            app:popUpTo="@id/finalizaPedido" />
+        <action
+            android:id="@+id/acao_finalizaPedido_para_listaPedidos"
+            app:destination="@id/listaPedidos"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/listaProdutos"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="pedidoId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaPedidos"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ListaPedidosFragment"
+        android:label="Pedidos"
+        tools:layout="@layout/lista_pedidos">
+        <action
+            android:id="@+id/acao_listaPedidos_para_detalhesPedido"
+            app:destination="@id/detalhesPedido" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesPedido"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.DetalhesPedidoFragment"
+        android:label="Detalhes do pedido" >
+        <argument
+            android:name="numeroPedido"
+            app:argType="long" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/acao_detalhePedido_para_listaPedidos"
+            app:destination="@id/listaPedidos" />
+    </fragment>
+    <fragment
+        android:id="@+id/alteraSenha"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.AlteraSenhaFragment"
+        android:label="Altera senha" >
+        <action
+            android:id="@+id/acao_alteraSenha_para_cadastroUsuario"
+            app:destination="@id/cadastroUsuario" />
+    </fragment>
+    <fragment
+        android:id="@+id/conexao"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ErroConexaoFragment"
+        android:label="ErroConexaoFragment" >
+        <action
+            android:id="@+id/acao_conexao_para_lista_produtos"
+            app:destination="@id/listaProdutos" />
+    </fragment>
+    <action android:id="@+id/erroConexao" app:destination="@id/conexao" />
+    <fragment
+        android:id="@+id/configuracoes"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ConfiguracaoFragment"
+        android:label="Editar configurações">
+        <action
+            android:id="@+id/acap_configuracoes_para_listaProdutos"
+            app:destination="@id/listaProdutos" />
+    </fragment>
+    <fragment
+        android:id="@+id/faleConosco"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.MensagemFragment"
+        android:label="Fale Conosco" >
+        <action
+            android:id="@+id/acao_mensagem_para_listaProdutos"
+            app:destination="@id/listaProdutos" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaMensagens"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ListaMensagensFragment"
+        android:label="Mensagens" />
+    <fragment
+        android:id="@+id/relatorioVendas"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.RelatorioVendasFragment"
+        android:label="Relatório de vendas" />
+    <fragment
+        android:id="@+id/relatorioEstoque"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.RelatorioEstoqueFragment"
+        android:label="Estoque" >
+        <action
+            android:id="@+id/acao_relatorioEstoque_para_formularioProduto"
+            app:destination="@id/formularioProduto" />
+    </fragment>
+</navigation>

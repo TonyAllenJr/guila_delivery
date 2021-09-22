@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/detalhes_pedido_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        tools:text="Data"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_simbolo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dash"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/detalhes_pedido_data"
+        app:layout_constraintBottom_toBottomOf="@+id/detalhes_pedido_data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_numero_pedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintTop_toTopOf="@id/detalhes_pedido_data"
+        app:layout_constraintBottom_toBottomOf="@id/detalhes_pedido_data"
+        app:layout_constraintStart_toEndOf="@id/detalhes_pedido_simbolo"
+        tools:text="250" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detalhes_pedido_cd_recebido"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_numero_pedido"
+        app:layout_constraintBottom_toTopOf="@id/detalhes_pedido_titulo_detalhes">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/detalhes_pedido_recebido"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:text="@string/recebido"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/detalhes_pedido_recebido_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="15:30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_recebido"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detalhes_pedido_cd_enviado"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toTopOf="@id/detalhes_pedido_cd_recebido"
+        app:layout_constraintStart_toEndOf="@id/detalhes_pedido_cd_recebido">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/detalhes_pedido_enviado"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:text="@string/enviado"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/detalhes_pedido_enviado_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="15:30"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_enviado"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detalhes_pedido_cd_entrega"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toTopOf="@id/detalhes_pedido_cd_enviado"
+        app:layout_constraintStart_toEndOf="@id/detalhes_pedido_cd_enviado">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/detalhes_pedido_entrega"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:text="@string/entregue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/detalhes_pedido_entrega_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="15:30"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_entrega"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/detalhes_pedido_titulo_detalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_cd_recebido"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/holo_orange_dark"
+        android:text="@string/detalhes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detalhes_pedido_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_titulo_detalhes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_lista_carrinho">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/detalhes_pedido_subTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtotal"
+        android:textSize="16sp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@id/detalhes_pedido_preco_subTotal"
+        app:layout_constraintBottom_toBottomOf="@id/detalhes_pedido_preco_subTotal" />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_preco_subTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ff7b5a"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="50,00" />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_taxa_entrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/entrega"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/detalhes_pedido_preco_entrega"
+        app:layout_constraintBottom_toBottomOf="@id/detalhes_pedido_preco_entrega" />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_preco_entrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ff7b5a"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_preco_subTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="3,00" />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/total"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/detalhes_pedido_preco_total"
+        app:layout_constraintBottom_toBottomOf="@+id/detalhes_pedido_preco_total"/>
+
+    <TextView
+        android:id="@+id/detalhes_pedido_preco_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        tools:text="53,00"
+        android:textStyle="bold"
+        android:textColor="#ff7b5a"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_preco_entrega"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_titulo_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cliente"
+        android:textColor="@android:color/holo_orange_dark"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_preco_total"
+        app:layout_constraintStart_toStartOf="@id/detalhes_pedido_titulo_detalhes"
+        />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_nome_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="Nome"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_titulo_usuario"
+        app:layout_constraintStart_toStartOf="@id/detalhes_pedido_titulo_usuario"/>
+
+    <TextView
+        android:id="@+id/detalhes_pedido_dados_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="Endereço"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_nome_usuario"
+        app:layout_constraintStart_toStartOf="@id/detalhes_pedido_nome_usuario"/>
+
+    <TextView
+        android:id="@+id/detalhes_pedido_titulo_tipo_pagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tipo_de_pagamento"
+        android:textColor="@android:color/holo_orange_dark"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_dados_usuario"
+        app:layout_constraintStart_toStartOf="@id/detalhes_pedido_dados_usuario"
+        />
+
+    <TextView
+        android:id="@+id/detalhes_pedido_tipo_pagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="Dinheiro"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_titulo_tipo_pagamento"
+        app:layout_constraintStart_toStartOf="@id/detalhes_pedido_titulo_tipo_pagamento"/>
+
+    <ImageView
+        android:id="@+id/detalhes_pedido_botao_excluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_acao_excluir"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/detalhes_pedido_tipo_pagamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="TODO" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

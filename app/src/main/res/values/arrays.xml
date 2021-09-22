@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categoria">
+        <item/>
+        <item>Cerveja</item>
+        <item>Sem álcool</item>
+        <item>Destilado</item>
+        <item>Petiscos</item>
+        <item>Diversos</item>
+    </string-array>
+
+    <string-array name="ativarApp">
+        <item>Aberto</item>
+        <item>Fechado</item>
+    </string-array>
+
+    <string-array name="ordenarLista">
+        <item>Nome</item>
+        <item>Quantidade</item>
+        <item>Valor</item>
+    </string-array>
+
+</resources>

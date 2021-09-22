@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:id="@+id/item_relatorio_vendas_produto"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="220dp"
+        android:maxLength="25"
+        tools:text="Produto"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/item_relatorio_vendas_quantidade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/item_relatorio_vendas_quantidade"
+        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/item_relatorio_vendas_produto"
+        app:layout_constraintTop_toTopOf="@+id/item_relatorio_vendas_produto"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/item_relario_vendas_valor"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_width="wrap_content"
+        android:textColor="#ff7b5a"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_relatorio_vendas_quantidade"
+        tools:text="19,90" />
+
+    <ImageView
+        android:id="@+id/item_relatorio_vendas_linha"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_relatorio_vendas_quantidade"
+        android:background="@android:color/holo_orange_light"
+        android:contentDescription="@string/linha_divisoria" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

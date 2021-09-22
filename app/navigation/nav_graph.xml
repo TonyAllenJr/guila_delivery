@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaProdutos">
+
+    <fragment
+        android:id="@+id/listaProdutos"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.ListaProdutosFragment"
+        android:label="Lista de produtos"
+        tools:layout="@layout/lista_produtos">
+        <action
+            android:id="@+id/acao_listaProdutos_para_formularioProduto"
+            app:destination="@id/formularioProduto" />
+        <action
+            android:id="@+id/acao_listaProdutos_para_detalhes_produto"
+            app:destination="@id/detalhesProduto" />
+    </fragment>
+    <fragment
+        android:id="@+id/formularioProduto"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.FormularioProdutoFragment"
+        android:label="Formulario do produto"
+        tools:layout="@layout/formulario_produto">
+        <action
+            android:id="@+id/acao_formularioProduto_para_listaProdutos"
+            app:destination="@id/listaProdutos"
+            app:popUpTo="@id/listaProdutos"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="produtoId"
+            app:argType="long" />
+    </fragment>
+    <action
+        android:id="@+id/acao_global_login"
+        app:destination="@id/login_graph"
+        app:popUpTo="@id/listaProdutos"
+        app:popUpToInclusive="true" />
+    <navigation
+        android:id="@+id/login_graph"
+        android:label="Fluxo login"
+        app:startDestination="@id/login">
+        <fragment
+            android:id="@+id/login"
+            android:name="br.com.antonio.distribuidoradoguila.ui.fragment.LoginFragment"
+            android:label="Login"
+            tools:layout="@layout/login">
+            <action
+                android:id="@+id/acao_login_para_listaProdutos"
+                app:destination="@id/listaProdutos"
+                app:popUpTo="@id/login"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/acao_login_para_cadastroUsuario"
+                app:destination="@id/cadastroUsuario" />
+        </fragment>
+        <fragment
+            android:id="@+id/cadastroUsuario"
+            android:name="br.com.antonio.distribuidoradoguila.ui.fragment.CadastroUsuarioFragment"
+            android:label="Cadastro de usuário"
+            tools:layout="@layout/cadastro_usuario" />
+    </navigation>
+    <fragment
+        android:id="@+id/perfil"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.PerfilFragment"
+        android:label="Perfil" />
+    <fragment
+        android:id="@+id/detalhesProduto"
+        android:name="br.com.antonio.distribuidoradoguila.ui.fragment.DetalhesProdutoFragment"
+        android:label="Detalhes do produto"
+        tools:layout="@layout/detalhes_produto"/>
+</navigation>

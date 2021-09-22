@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/login_logo"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:contentDescription="@string/logo"
+                android:src="@drawable/imagem_tela_inicial"
+                app:layout_constraintBottom_toTopOf="@id/login_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/login_logo"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="@string/Email"
+                    android:inputType="textEmailAddress"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_senha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@id/login_email"
+                app:layout_constraintStart_toStartOf="@id/login_email"
+                app:layout_constraintTop_toBottomOf="@id/login_email"
+                app:layout_constraintVertical_bias="0.0"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/white"
+                    android:hint="@string/senha"
+                    android:inputType="textPassword"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/login_botao_logar"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/entrar"
+                android:background="@drawable/formato_botao_acao"
+                app:layout_constraintEnd_toEndOf="@id/login_senha"
+                app:layout_constraintStart_toStartOf="@id/login_senha"
+                app:layout_constraintTop_toBottomOf="@id/login_senha" />
+
+            <Button
+                android:id="@+id/login_botao_cadastrar_usuario"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/cadastrar"
+                android:background="@drawable/formato_botao_acao"
+                app:layout_constraintEnd_toEndOf="@id/login_botao_logar"
+                app:layout_constraintStart_toStartOf="@id/login_botao_logar"
+                app:layout_constraintTop_toBottomOf="@id/login_botao_logar" />
+
+            <TextView
+                android:id="@+id/login_redefine_senha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/esqueci_minha_senha"
+                app:layout_constraintStart_toStartOf="@id/login_botao_cadastrar_usuario"
+                app:layout_constraintTop_toBottomOf="@id/login_botao_cadastrar_usuario" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</ScrollView>
